@@ -29,3 +29,7 @@ class Player(CircleShape):
             
         if keys[pygame.K_d]:
             self.rotate(-dt)
+
+    def move(self, dt):
+        pass
+        
