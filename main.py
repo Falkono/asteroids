@@ -14,11 +14,10 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
-    
+
+    Player.containers = (updateable, drawable)    
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
-    updateable.add(player)
-    drawable.add(player)
     
     while True:
         for event in pygame.event.get():
@@ -28,7 +27,7 @@ def main():
         screen.fill((0,0,0))
 
         for thing in drawable:
-            thing.draw(screem)
+            thing.draw(screen)
 
         for thing in updateable:
             thing.update(dt)
